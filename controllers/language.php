@@ -113,10 +113,7 @@ class Language extends ClearOS_Controller
                     $this->login_session->set_language($this->input->post('code'));
 
                 $this->page->set_status_updated();
-
-                // Special handling when changing the language
-                // - Do a full reload with the new language setting!
-                redirect('/language');
+                $this->page->redirect('/language');
             } catch (Exception $e) {
                 $this->page->view_exception($e);
                 return;
@@ -127,7 +124,12 @@ class Language extends ClearOS_Controller
         //---------------
 
         try {
-            $data['form_type'] = $form_type;
+            // Tweak form type if this is loaded in the install wizard
+            if (isset($this->session->userdata['wizard']))
+                $data['form_type'] = 'wizard';
+            else
+                $data['form_type'] = $form_type;
+
             $data['code'] = $this->locale->get_language_code();
             $data['languages'] = $this->locale->get_languages();
         } catch (Exception $e) {

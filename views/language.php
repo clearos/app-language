@@ -43,7 +43,12 @@ $this->lang->load('language');
 // Sort by value instead of language code.
 asort($languages);
 
-if ($form_type === 'edit') {
+if ($form_type === 'wizard') {
+    $read_only = FALSE;
+    $buttons = array(
+        form_submit_update('submit'),
+    );
+} else if ($form_type === 'edit') {
     $read_only = FALSE;
     $buttons = array(
         form_submit_update('submit'),
