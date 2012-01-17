@@ -113,7 +113,7 @@ class Language extends ClearOS_Controller
                     $this->login_session->set_language($this->input->post('code'));
 
                 $this->page->set_status_updated();
-                $this->page->redirect('/language');
+                redirect('/language');
             } catch (Exception $e) {
                 $this->page->view_exception($e);
                 return;
