@@ -70,8 +70,10 @@ echo form_header(lang('base_settings'));
 
 echo field_dropdown('code', $languages, $code, lang('language_default_system_language'), $read_only);
 
+/*
 if ($form_type === 'edit')
     echo field_checkbox('session', TRUE, lang('language_update_my_login_session'));
+*/
 
 echo field_button_set($buttons);
 
