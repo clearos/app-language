@@ -98,6 +98,7 @@ class Locale extends Engine
 
     const FILE_I18N = '/etc/sysconfig/i18n';
     const FILE_FRAMEWORK = '/etc/clearos/framework/language.php';
+    const FILE_CONFIG = '/etc/clearos/language.conf';
     const FILE_KEYBOARD = '/etc/sysconfig/keyboard';
     const DEFAULT_ENCODING = 'UTF-8';
     const DEFAULT_KEYBOARD = 'us';
@@ -147,6 +148,60 @@ class Locale extends Engine
             $encoding = self::DEFAULT_ENCODING;
 
         return $encoding;
+    }
+
+    /**
+     * Returns the list of framework languages.
+     *
+     * @see get_languages()
+     * @return array hash array of framework languages
+     * @throws Engine_Exception
+     */
+
+    public function get_framework_languages()
+    {
+        clearos_profile(__METHOD__, __LINE__);
+
+        $active_list = array();
+        $locales = $this->get_locales();
+        $codes = $this->_get_framework_codes();
+
+        foreach ($codes as $code)
+            $active_list[$code] = $locales[$code]['native_description'];
+
+        if (empty($active_list))
+            $active_list['en_US'] = $locales['en_US']['native_description'];
+
+        asort($active_list);
+
+        return $active_list;
+    }
+
+    /**
+     * Returns the list of framework locales.
+     *
+     * @see get_locales()
+     * @return array hash array of framework locales
+     * @throws Engine_Exception
+     */
+
+    public function get_framework_locales()
+    {
+        clearos_profile(__METHOD__, __LINE__);
+
+        $active_list = array();
+        $locales = $this->get_locales();
+        $codes = $this->_get_framework_codes();
+
+        foreach ($codes as $code)
+            $active_list[$code] = $locales[$code];
+
+        if (empty($active_list))
+            $active_list['en_US'] = $locales['en_US'];
+
+        asort($active_list);
+
+        return $active_list;
     }
 
     /**
@@ -468,5 +523,41 @@ class Locale extends Engine
 
         $this->locales = $locales;
         $this->is_loaded = TRUE;
+    }
+
+    /**
+     * Loads list of active framework language codes.
+     *
+     * @return array list of active framework language codes
+     */
+
+    protected function _get_framework_codes()
+    {
+        clearos_profile(__METHOD__, __LINE__);
+
+        $locales = $this->get_locales();
+
+        $file = new File(self::FILE_CONFIG);
+
+        $raw_list = array();
+
+        if ($file->exists()) {
+            $line = $file->lookup_value('/^active\s*=\s*/');
+            $raw_list = preg_split('/\s+/', $line);
+        }
+
+        $active_list = array();
+
+        foreach ($raw_list as $locale) {
+            if (array_key_exists($locale, $locales))
+                $active_list[] = $locale;
+        }
+
+        if (empty($active_list))
+            $active_list = array('en_US');
+
+        sort($active_list);
+
+        return $active_list;
     }
 }

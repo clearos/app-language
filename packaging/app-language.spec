@@ -1,7 +1,7 @@
 
 Name: app-language
 Epoch: 1
-Version: 1.0.10
+Version: 1.0.15
 Release: 1%{dist}
 Summary: Language
 License: GPLv3
@@ -33,6 +33,7 @@ This package provides the core API and libraries.
 mkdir -p -m 755 %{buildroot}/usr/clearos/apps/language
 cp -r * %{buildroot}/usr/clearos/apps/language/
 
+install -D -m 0644 packaging/language.conf %{buildroot}/etc/clearos/language.conf
 
 %post
 logger -p local6.notice -t installer 'app-language - installing'
@@ -75,3 +76,4 @@ exit 0
 /usr/clearos/apps/language/deploy
 /usr/clearos/apps/language/language
 /usr/clearos/apps/language/libraries
+%config(noreplace) /etc/clearos/language.conf

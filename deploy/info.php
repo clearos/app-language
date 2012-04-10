@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'language';
-$app['version'] = '1.0.10';
+$app['version'] = '1.0.15';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -25,3 +25,11 @@ $app['subcategory'] = lang('base_subcategory_settings');
 /////////////////////////////////////////////////////////////////////////////
 // Packaging
 /////////////////////////////////////////////////////////////////////////////
+
+$app['core_file_manifest'] = array(
+    'language.conf' => array(
+        'target' => '/etc/clearos/language.conf',
+        'config' => TRUE,
+        'config_params' => 'noreplace',
+    ),
+);
