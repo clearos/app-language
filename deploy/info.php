@@ -34,3 +34,7 @@ $app['core_file_manifest'] = array(
         'config_params' => 'noreplace',
     ),
 );
+
+$app['core_directory_manifest'] = array(
+    '/etc/clearos/language.d' => array(),
+);
