@@ -149,6 +149,17 @@ $locales = array(
         'enabled' => TRUE
     ),
 
+    'my_MM' => array(
+        'base_code' => 'my', 
+        'description' => lang('base_language_my_MM'),
+        'native_description' => 'မြန်မာစာ',
+        'default_keyboard' => 'us',
+        'default_time_zone' => 'Asia/Rangoon',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+        'enabled' => TRUE
+    ),
+
     'nl_NL' => array(
         'base_code' => 'nl', 
         'description' => lang('base_language_nl_nl'),
