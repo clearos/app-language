@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'language';
-$app['version'] = '1.2.3';
+$app['version'] = '1.2.4';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -26,6 +26,10 @@ $app['menu_enabled'] = FALSE;
 /////////////////////////////////////////////////////////////////////////////
 // Packaging
 /////////////////////////////////////////////////////////////////////////////
+
+$app['core_requires'] = array(
+    'clearos-framework >= 6.3.5'
+);
 
 $app['core_file_manifest'] = array(
     'language.conf' => array(

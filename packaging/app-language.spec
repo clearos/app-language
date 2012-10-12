@@ -1,7 +1,7 @@
 
 Name: app-language
 Epoch: 1
-Version: 1.2.3
+Version: 1.2.4
 Release: 1%{dist}
 Summary: Language
 License: GPLv3
@@ -19,6 +19,7 @@ Summary: Language - Core
 License: LGPLv3
 Group: ClearOS/Libraries
 Requires: app-base-core
+Requires: clearos-framework >= 6.3.5
 
 %description core
 This software is provided in many different languages.  Use this tool to set the default language for the system.
