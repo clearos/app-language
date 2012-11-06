@@ -161,7 +161,7 @@ $locales = array(
 
     'my_MM' => array(
         'base_code' => 'my', 
-        'description' => lang('language_code_my_MM'),
+        'description' => lang('language_code_my_mm'),
         'native_description' => 'မြန်မာစာ',
         'default_keyboard' => 'us',
         'default_time_zone' => 'Asia/Rangoon',
