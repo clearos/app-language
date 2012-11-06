@@ -19,7 +19,7 @@ Summary: Language - Core
 License: LGPLv3
 Group: ClearOS/Libraries
 Requires: app-base-core
-Requires: clearos-framework >= 6.3.5
+Requires: clearos-framework >= 6.4.2
 
 %description core
 This software is provided in many different languages.  Use this tool to set the default language for the system.

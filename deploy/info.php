@@ -28,7 +28,7 @@ $app['menu_enabled'] = FALSE;
 /////////////////////////////////////////////////////////////////////////////
 
 $app['core_requires'] = array(
-    'clearos-framework >= 6.3.5'
+    'clearos-framework >= 6.4.2'
 );
 
 $app['core_file_manifest'] = array(
