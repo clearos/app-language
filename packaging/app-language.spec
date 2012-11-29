@@ -1,7 +1,7 @@
 
 Name: app-language
 Epoch: 1
-Version: 1.4.4
+Version: 1.4.6
 Release: 1%{dist}
 Summary: Language
 License: GPLv3
