@@ -3,9 +3,9 @@
 /**
  * Locale class.
  *
- * @category   Apps
- * @package    Language
- * @subpackage Libraries
+ * @category   apps
+ * @package    language
+ * @subpackage libraries
  * @author     ClearFoundation <developer@clearfoundation.com>
  * @copyright  2006-2011 ClearFoundation
  * @license    http://www.gnu.org/copyleft/lgpl.html GNU Lesser General Public License version 3 or later
@@ -81,9 +81,9 @@ clearos_load_library('base/Validation_Exception');
 /**
  * Locale class.
  *
- * @category   Apps
- * @package    Language
- * @subpackage Libraries
+ * @category   apps
+ * @package    language
+ * @subpackage libraries
  * @author     ClearFoundation <developer@clearfoundation.com>
  * @copyright  2006-2011 ClearFoundation
  * @license    http://www.gnu.org/copyleft/lgpl.html GNU Lesser General Public License version 3 or later
