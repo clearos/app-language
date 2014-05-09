@@ -1,7 +1,7 @@
 
 Name: app-language
 Epoch: 1
-Version: 1.4.8
+Version: 1.6.0
 Release: 1%{dist}
 Summary: Language
 License: GPLv3
@@ -72,7 +72,6 @@ exit 0
 %files core
 %defattr(-,root,root)
 %exclude /usr/clearos/apps/language/packaging
-%exclude /usr/clearos/apps/language/tests
 %dir /usr/clearos/apps/language
 /usr/clearos/apps/language/deploy
 /usr/clearos/apps/language/language
