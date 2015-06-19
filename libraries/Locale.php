@@ -217,7 +217,10 @@ class Locale extends Engine
 
         try {
             $file = new File(self::FILE_KEYBOARD);
-            $keyboard = $file->lookup_value('/^KEYTABLE=/');
+            if ($file->exists())
+                $keyboard = $file->lookup_value('/^KEYTABLE=/');
+            else
+                $keyboard = self::DEFAULT_KEYBOARD;
         } catch (File_Not_Found_Exception $e) {
             $keyboard = self::DEFAULT_KEYBOARD;
         } catch (Exception $e) {
@@ -267,9 +270,13 @@ class Locale extends Engine
         $file = new File(Locale::FILE_I18N);
 
         try {
-            $code = $file->lookup_value('/^LANG=/');
-            $code = preg_replace('/\..*/', '', $code);
-            $code = preg_replace('/\"/', '', $code);
+            if ($file->exists()) {
+                $code = $file->lookup_value('/^LANG=/');
+                $code = preg_replace('/\..*/', '', $code);
+                $code = preg_replace('/\"/', '', $code);
+            } else {
+                $code = Locale::DEFAULT_LANGUAGE_CODE;
+            }
         } catch (File_Not_Found_Exception $e) {
             $code = Locale::DEFAULT_LANGUAGE_CODE;
         } catch (File_No_Match_Exception $e) {
