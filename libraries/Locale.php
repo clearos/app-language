@@ -96,7 +96,7 @@ class Locale extends Engine
     // C O N S T A N T S
     ///////////////////////////////////////////////////////////////////////////////
 
-    const FILE_I18N = '/etc/sysconfig/i18n';
+    const FILE_LOCALE_CONFIG = '/etc/locale.conf';
     const FILE_FRAMEWORK = '/etc/clearos/framework/language.php';
     const FILE_CONFIG = '/etc/clearos/language.conf';
     const FILE_KEYBOARD = '/etc/sysconfig/keyboard';
@@ -267,7 +267,7 @@ class Locale extends Engine
     {
         clearos_profile(__METHOD__, __LINE__);
 
-        $file = new File(Locale::FILE_I18N);
+        $file = new File(Locale::FILE_LOCALE_CONFIG);
 
         try {
             if ($file->exists()) {
@@ -426,7 +426,7 @@ class Locale extends Engine
 
         Validation_Exception::is_valid($this->validate_language_code($code));
 
-        $file = new File(self::FILE_I18N);
+        $file = new File(self::FILE_LOCALE_CONFIG);
 
         if ($file->exists()) {
             $file->replace_lines('/^LANG=/', "LANG=\"$code.UTF-8\"\n");
