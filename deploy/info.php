@@ -28,6 +28,7 @@ $app['menu_enabled'] = FALSE;
 /////////////////////////////////////////////////////////////////////////////
 
 $app['core_requires'] = array(
+    'app-events-core >= 1:2.3.0',
     'clearos-framework >= 7.3.3',
     'grub2'
 );
@@ -38,4 +39,13 @@ $app['core_file_manifest'] = array(
         'config' => TRUE,
         'config_params' => 'noreplace',
     ),
+    'onboot-event'=> array(
+        'target' => '/var/clearos/events/onboot/language',
+        'mode' => '0755'
+    ),
 );
+
+$app['core_directory_manifest'] = array(
+    '/var/clearos/language' => array()
+);
+

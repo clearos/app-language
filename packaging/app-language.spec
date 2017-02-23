@@ -19,6 +19,7 @@ Summary: Language - Core
 License: LGPLv3
 Group: ClearOS/Libraries
 Requires: app-base-core
+Requires: app-events-core >= 1:2.3.0
 Requires: clearos-framework >= 7.3.3
 Requires: grub2
 
@@ -35,7 +36,9 @@ This package provides the core API and libraries.
 mkdir -p -m 755 %{buildroot}/usr/clearos/apps/language
 cp -r * %{buildroot}/usr/clearos/apps/language/
 
+install -d -m 0755 %{buildroot}/var/clearos/language
 install -D -m 0644 packaging/language.conf %{buildroot}/etc/clearos/language.conf
+install -D -m 0755 packaging/onboot-event %{buildroot}/var/clearos/events/onboot/language
 
 %post
 logger -p local6.notice -t installer 'app-language - installing'
@@ -75,7 +78,9 @@ exit 0
 %exclude /usr/clearos/apps/language/packaging
 %exclude /usr/clearos/apps/language/unify.json
 %dir /usr/clearos/apps/language
+%dir /var/clearos/language
 /usr/clearos/apps/language/deploy
 /usr/clearos/apps/language/language
 /usr/clearos/apps/language/libraries
 %config(noreplace) /etc/clearos/language.conf
+/var/clearos/events/onboot/language

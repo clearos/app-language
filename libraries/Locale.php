@@ -100,6 +100,7 @@ class Locale extends Engine
     const FILE_FRAMEWORK = '/etc/clearos/framework/language.php';
     const FILE_CONFIG = '/etc/clearos/language.conf';
     const FILE_KEYBOARD = '/etc/sysconfig/keyboard';
+    const FILE_GRUB_STATE = '/var/clearos/language/set_by_grub';
     const DEFAULT_ENCODING = 'UTF-8';
     const DEFAULT_KEYBOARD = 'us';
     const DEFAULT_TRANSLATION_CODE = 'en';
@@ -329,6 +330,53 @@ class Locale extends Engine
             $translation_code = self::DEFAULT_TRANSLATION_CODE;
 
         return $translation_code;
+    }
+
+    /**
+     * Sets locale from grub configuration.
+     *
+     * @return void
+     * @throws Engine_Exception, Validation_Exception
+     */
+
+    public function set_from_grub($force = FALSE)
+    {
+        clearos_profile(__METHOD__, __LINE__);
+
+        // Priority order
+        $configs = array(
+            '/boot/efi/EFI/install/grubenv',
+            '/boot/efi/EFI/clearos/grubenv',
+            '/boot/grub2/grubenv'
+        );
+
+        $state_file = new File(self::FILE_GRUB_STATE);
+
+        if (!$force && $state_file->exists())
+            return;
+
+        foreach ($configs as $config) {
+            $file = new File($config, TRUE);
+
+            if ($file->exists()) {
+                try {
+                    $grub_code = $file->lookup_value('/language=/');
+                    if (array_key_exists($grub_code, $this->grub_codes)) {
+                        $lang_code = $this->grub_codes[$grub_code];
+                        $this->set_language_code($lang_code);
+
+                        if (!$state_file->exists())
+                            $state_file->create('root', 'root', '0644');
+
+                        clearos_log('app-language', 'set locale from grub');
+                        // We're done on the first match
+                        return;
+                    }
+                } catch (File_No_Match_Exception $e) {
+                    // Not fatal
+                }
+            }
+        }
     }
 
     /**
