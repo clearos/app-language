@@ -1,7 +1,7 @@
 
 Name: app-language
 Epoch: 1
-Version: 2.3.3
+Version: 2.3.20
 Release: 1%{dist}
 Summary: Language
 License: GPLv3
@@ -19,7 +19,8 @@ Summary: Language - Core
 License: LGPLv3
 Group: ClearOS/Libraries
 Requires: app-base-core
-Requires: clearos-framework >= 6.4.2
+Requires: clearos-framework >= 7.3.3
+Requires: grub2
 
 %description core
 This software is provided in many different languages.  Use this tool to set the default language for the system.
@@ -72,6 +73,7 @@ exit 0
 %files core
 %defattr(-,root,root)
 %exclude /usr/clearos/apps/language/packaging
+%exclude /usr/clearos/apps/language/unify.json
 %dir /usr/clearos/apps/language
 /usr/clearos/apps/language/deploy
 /usr/clearos/apps/language/language

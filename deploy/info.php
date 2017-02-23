@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'language';
-$app['version'] = '2.3.3';
+$app['version'] = '2.3.20';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -28,7 +28,8 @@ $app['menu_enabled'] = FALSE;
 /////////////////////////////////////////////////////////////////////////////
 
 $app['core_requires'] = array(
-    'clearos-framework >= 6.4.2'
+    'clearos-framework >= 7.3.3',
+    'grub2'
 );
 
 $app['core_file_manifest'] = array(

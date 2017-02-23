@@ -102,7 +102,7 @@ class Locale extends Engine
     const FILE_KEYBOARD = '/etc/sysconfig/keyboard';
     const DEFAULT_ENCODING = 'UTF-8';
     const DEFAULT_KEYBOARD = 'us';
-    const DEFAULT_LANGUAGE_BASE_CODE = 'en';
+    const DEFAULT_TRANSLATION_CODE = 'en';
     const DEFAULT_LANGUAGE_CODE = 'en_US';
     const DEFAULT_TEXT_DIRECTION = 'LTR';
 
@@ -111,7 +111,8 @@ class Locale extends Engine
     ///////////////////////////////////////////////////////////////////////////////
 
     protected $locales = array();
-    protected $is_loaded = FALSE;
+    protected $grub_codes = array();
+    protected $translation_codes = array();
 
     ///////////////////////////////////////////////////////////////////////////////
     // M E T H O D S
@@ -124,6 +125,12 @@ class Locale extends Engine
     public function __construct()
     {
         clearos_profile(__METHOD__, __LINE__);
+
+        include clearos_app_base('language') . '/deploy/locales.php';
+
+        $this->locales = $locales;
+        $this->grub_codes = $grub_codes;
+        $this->translation_codes = $translation_codes;
     }
 
     /**
@@ -133,14 +140,12 @@ class Locale extends Engine
      * @throws Engine_Exception
      */
 
-    public function get_encoding()
+    public function get_encoding($code = '')
     {
         clearos_profile(__METHOD__, __LINE__);
 
-        if (! $this->is_loaded)
-            $this->_load_locales();
-
-        $code = $this->get_language_code();
+        if (empty($code))
+            $code = $this->get_language_code();
 
         if (isset($this->locales[$code]) && isset($this->locales[$code]['encoding']))
             $encoding = $this->locales[$code]['encoding'];
@@ -148,60 +153,6 @@ class Locale extends Engine
             $encoding = self::DEFAULT_ENCODING;
 
         return $encoding;
-    }
-
-    /**
-     * Returns the list of framework languages.
-     *
-     * @see get_languages()
-     * @return array hash array of framework languages
-     * @throws Engine_Exception
-     */
-
-    public function get_framework_languages()
-    {
-        clearos_profile(__METHOD__, __LINE__);
-
-        $active_list = array();
-        $locales = $this->get_locales();
-        $codes = $this->_get_framework_codes();
-
-        foreach ($codes as $code)
-            $active_list[$code] = $locales[$code]['native_description'];
-
-        if (empty($active_list))
-            $active_list['en_US'] = $locales['en_US']['native_description'];
-
-        asort($active_list);
-
-        return $active_list;
-    }
-
-    /**
-     * Returns the list of framework locales.
-     *
-     * @see get_locales()
-     * @return array hash array of framework locales
-     * @throws Engine_Exception
-     */
-
-    public function get_framework_locales()
-    {
-        clearos_profile(__METHOD__, __LINE__);
-
-        $active_list = array();
-        $locales = $this->get_locales();
-        $codes = $this->_get_framework_codes();
-
-        foreach ($codes as $code)
-            $active_list[$code] = $locales[$code];
-
-        if (empty($active_list))
-            $active_list['en_US'] = $locales['en_US'];
-
-        asort($active_list);
-
-        return $active_list;
     }
 
     /**
@@ -240,9 +191,6 @@ class Locale extends Engine
     public function get_keyboards()
     {
         clearos_profile(__METHOD__, __LINE__);
-
-        if (! $this->is_loaded)
-            $this->_load_locales();
 
         $keyboards = array();
 
@@ -289,30 +237,6 @@ class Locale extends Engine
     }
 
     /**
-     * Returns the configured two-letter language code.
-     *
-     * @return string two-letter language code
-     * @throws Engine_Exception
-     */
-
-    public function get_language_base_code()
-    {
-        clearos_profile(__METHOD__, __LINE__);
-
-        if (! $this->is_loaded)
-            $this->_load_locales();
-
-        $code = $this->get_language_code();
-
-        if (isset($this->locales[$code]) && isset($this->locales[$code]['base_code']))
-            $base_code = $this->locales[$code]['base_code'];
-        else
-            $base_code = self::DEFAULT_LANGUAGE_BASE_CODE;
-
-        return $base_code;
-    }
-
-    /**
      * Returns language list in their native language.
      *
      * This method returns a hash array of languages keyed on the code. 
@@ -330,7 +254,7 @@ class Locale extends Engine
         $languages = array();
 
         foreach ($locales as $code => $details)
-            $languages[$code] = $details['native_description'];
+            $languages[$code] = $details['native_description'] . ' - ' . $code;
 
         return $languages;
     }
@@ -339,7 +263,6 @@ class Locale extends Engine
      * Returns the list of installed locales used in the framework.
      *
      * The information is an array keyed on the language code (e.g. en_US)
-     * - base_code, e.g. en
      * - description
      * - native_description e.g. Français instead of French
      * - default_keyboard
@@ -356,9 +279,6 @@ class Locale extends Engine
     {
         clearos_profile(__METHOD__, __LINE__);
 
-        if (! $this->is_loaded)
-            $this->_load_locales();
-
         return $this->locales;
     }
 
@@ -369,14 +289,12 @@ class Locale extends Engine
      * @throws Engine_Exception
      */
 
-    public function get_text_direction()
+    public function get_text_direction($code = '')
     {
         clearos_profile(__METHOD__, __LINE__);
 
-        if (! $this->is_loaded)
-            $this->_load_locales();
-
-        $code = $this->get_language_code();
+        if (empty($code))
+            $code = $this->get_language_code();
 
         if (isset($this->locales[$code]) && isset($this->locales[$code]['text_direction']))
             $text_direction = $this->locales[$code]['text_direction'];
@@ -384,6 +302,33 @@ class Locale extends Engine
             $text_direction = self::DEFAULT_TEXT_DIRECTION;
 
         return $text_direction;
+    }
+
+    /**
+     * Returns the translation code used by the framework.
+     *
+     * The translation system in ClearOS uses a different set of
+     * language codes from the translation service.  This method
+     * returns the translation code for the configured locale.conf
+     * language.
+     *
+     * @return string character encoding
+     * @throws Engine_Exception
+     */
+
+    public function get_translation_code($code = '')
+    {
+        clearos_profile(__METHOD__, __LINE__);
+
+        if (empty($code))
+            $code = $this->get_language_code();
+
+        if (isset($this->locales[$code]) && isset($this->locales[$code]['translation_code']))
+            $translation_code = $this->locales[$code]['translation_code'];
+        else
+            $translation_code = self::DEFAULT_TRANSLATION_CODE;
+
+        return $translation_code;
     }
 
     /**
@@ -427,17 +372,18 @@ class Locale extends Engine
         Validation_Exception::is_valid($this->validate_language_code($code));
 
         $file = new File(self::FILE_LOCALE_CONFIG);
+        $encoding = $this->locales[$code]['encoding'];
 
         if ($file->exists()) {
-            $file->replace_lines('/^LANG=/', "LANG=\"$code.UTF-8\"\n");
+            $file->replace_lines('/^LANG=/', "LANG=\"$code.$encoding\"\n");
         } else {
             $file->create('root', 'root', '0644');
-            $file->add_lines("LANG=\"$code.UTF-8\"\n");
+            $file->add_lines("LANG=\"$code.$encoding\"\n");
         }
     }
 
     /**
-     * Sets the language and keyboard based on defaults.
+     * Sets the locale.
      *
      * @param string $code language code
      *
@@ -451,13 +397,14 @@ class Locale extends Engine
 
         Validation_Exception::is_valid($this->validate_language_code($code));
 
-        if (! $this->is_loaded)
-            $this->_load_locales();
-
+        // Language
         $this->set_language_code($code);
 
-        if (isset($this->locales[$code]) && isset($this->locales[$code]['default_keyboard']))
-            $this->set_keyboard($this->locales[$code]['default_keyboard']);
+        // Set /etc/vconsole.conf
+        //-----------------------
+        // TODO
+        // if (isset($this->locales[$code]) && isset($this->locales[$code]['default_keyboard']))
+        //    $this->set_keyboard($this->locales[$code]['default_keyboard']);
     }
 
     ///////////////////////////////////////////////////////////////////////////////
@@ -476,9 +423,6 @@ class Locale extends Engine
     public function validate_keyboard($keyboard)
     {
         clearos_profile(__METHOD__, __LINE__);
-
-        if (! $this->is_loaded)
-            $this->_load_locales();
 
         foreach ($this->locales as $code => $details) {
             if ($details['default_keyboard'] === $keyboard)
@@ -501,70 +445,7 @@ class Locale extends Engine
     {
         clearos_profile(__METHOD__, __LINE__);
 
-        if (! $this->is_loaded)
-            $this->_load_locales();
-
-        foreach ($this->locales as $supported_code => $details) {
-            if ($supported_code === $code)
-                return;
-        }
-
-        return lang('language_language_is_invalid');
-    }
-
-    ///////////////////////////////////////////////////////////////////////////////
-    // P R I V A T E  M E T H O D S
-    ///////////////////////////////////////////////////////////////////////////////
-
-    /**
-     * Loads locale information.
-     *
-     * @return array locale information
-     */
-
-    protected function _load_locales()
-    {
-        clearos_profile(__METHOD__, __LINE__);
-
-        include clearos_app_base('language') . '/deploy/locales.php';
-
-        $this->locales = $locales;
-        $this->is_loaded = TRUE;
-    }
-
-    /**
-     * Loads list of active framework language codes.
-     *
-     * @return array list of active framework language codes
-     */
-
-    protected function _get_framework_codes()
-    {
-        clearos_profile(__METHOD__, __LINE__);
-
-        $locales = $this->get_locales();
-
-        $file = new File(self::FILE_CONFIG);
-
-        $raw_list = array();
-
-        if ($file->exists()) {
-            $line = $file->lookup_value('/^active\s*=\s*/');
-            $raw_list = preg_split('/\s+/', $line);
-        }
-
-        $active_list = array();
-
-        foreach ($raw_list as $locale) {
-            if (array_key_exists($locale, $locales))
-                $active_list[] = $locale;
-        }
-
-        if (empty($active_list))
-            $active_list = array('en_US');
-
-        sort($active_list);
-
-        return $active_list;
+        if (!array_key_exists($code, $this->locales))
+            return lang('language_language_is_invalid');
     }
 }
