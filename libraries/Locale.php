@@ -64,6 +64,7 @@ clearos_load_library('base/File');
 // Exceptions
 //-----------
 
+use \Exception as Exception;
 use \clearos\apps\base\Engine_Exception as Engine_Exception;
 use \clearos\apps\base\File_No_Match_Exception as File_No_Match_Exception;
 use \clearos\apps\base\File_Not_Found_Exception as File_Not_Found_Exception;
@@ -136,6 +137,8 @@ class Locale extends Engine
 
     /**
      * Returns the character encoding for the current locale.
+     *
+     * @param string $code language code
      *
      * @return string character encoding
      * @throws Engine_Exception
@@ -216,7 +219,7 @@ class Locale extends Engine
     {
         clearos_profile(__METHOD__, __LINE__);
 
-        $file = new File(Locale::FILE_LOCALE_CONFIG);
+        $file = new File(self::FILE_LOCALE_CONFIG);
 
         try {
             if ($file->exists()) {
@@ -224,12 +227,12 @@ class Locale extends Engine
                 $code = preg_replace('/\..*/', '', $code);
                 $code = preg_replace('/\"/', '', $code);
             } else {
-                $code = Locale::DEFAULT_LANGUAGE_CODE;
+                $code = self::DEFAULT_LANGUAGE_CODE;
             }
         } catch (File_Not_Found_Exception $e) {
-            $code = Locale::DEFAULT_LANGUAGE_CODE;
+            $code = self::DEFAULT_LANGUAGE_CODE;
         } catch (File_No_Match_Exception $e) {
-            $code = Locale::DEFAULT_LANGUAGE_CODE;
+            $code = self::DEFAULT_LANGUAGE_CODE;
         } catch (Exception $e) {
             throw new Engine_Exception(clearos_exception_message($e));
         }
@@ -286,6 +289,8 @@ class Locale extends Engine
     /**
      * Returns the text direction for the current locale.
      *
+     * @param string $code language code
+     *
      * @return string direction, RTL or LTR
      * @throws Engine_Exception
      */
@@ -307,6 +312,8 @@ class Locale extends Engine
 
     /**
      * Returns the translation code used by the framework.
+     *
+     * @param string $code language code
      *
      * The translation system in ClearOS uses a different set of
      * language codes from the translation service.  This method
@@ -334,6 +341,8 @@ class Locale extends Engine
 
     /**
      * Sets locale from grub configuration.
+     *
+     * @param boolean $force force the change
      *
      * @return void
      * @throws Engine_Exception, Validation_Exception
