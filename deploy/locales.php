@@ -31,7 +31,6 @@ $translation_codes = array(
 	'bs' => array('description' => 'Bosnian'),
 	'ca' => array('description' => 'Catalan'),
 	'cs' => array('description' => 'Czech'),
-
 	'cy' => array('description' => 'Welsh'),
 	'da' => array('description' => 'Danish'),
 	'de' => array('description' => 'German'),
@@ -41,6 +40,7 @@ $translation_codes = array(
 	'es' => array('description' => 'Spanish'),
 	'et' => array('description' => 'Estonian'),
 	'eu' => array('description' => 'Basque'),
+
 	'fa' => array('description' => 'Persian'),
 	'fi' => array('description' => 'Finnish'),
 	'fr' => array('description' => 'French'),
@@ -246,10 +246,16 @@ $locales = array(
         'encoding' => 'UTF-8',
         'font' => 'latarcyrheb-sun16'
     ),
-
-
-
-
+    'cy_GB' => array(
+        'translation_code' => 'cy',
+        'description' => lang('language_code_cy_gb'),
+        'native_description' => 'Cymraeg',
+        'default_keyboard' => 'uk',
+        'default_time_zone' => 'Europe/London',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+        'font' => 'latarcyrheb-sun16'
+    ),
     'da_DK' => array(
         'translation_code' => 'da',
         'description' => lang('language_code_da_dk'),
@@ -258,8 +264,8 @@ $locales = array(
         'default_time_zone' => 'Europe/Copenhagen',
         'text_direction' => 'LTR',
         'encoding' => 'UTF-8',
+        'font' => 'latarcyrheb-sun16'
     ),
-
     'de_DE' => array(
         'translation_code' => 'de',
         'description' => lang('language_code_de_de'),
@@ -268,8 +274,18 @@ $locales = array(
         'default_time_zone' => 'Europe/Berlin',
         'text_direction' => 'LTR',
         'encoding' => 'UTF-8',
+        'font' => 'latarcyrheb-sun16'
     ),
-
+    'el_GR' => array(
+        'translation_code' => 'el',
+        'description' => lang('language_code_el_gr'),
+        'native_description' => 'Ελληνικά',
+        'default_keyboard' => 'gr',
+        'default_time_zone' => 'Europe/Athens',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+        'font' => 'iso07u-16'
+    ),
     'en_US' => array(
         'translation_code' => 'en',
         'description' => lang('language_code_en_us'),
@@ -278,8 +294,18 @@ $locales = array(
         'default_time_zone' => 'America/New_York',
         'text_direction' => 'LTR',
         'encoding' => 'UTF-8',
+        'font' => 'latarcyrheb-sun16'
     ),
-
+    'eo' => array(
+        'translation_code' => 'eo',
+        'description' => lang('language_code_eo'),
+        'native_description' => 'Esperanto',
+        'default_keyboard' => 'us',
+        'default_time_zone' => '',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+        'font' => 'latarcyrheb-sun16'
+    ),
     'es_ES' => array(
         'translation_code' => 'es',
         'description' => lang('language_code_es_es'),
@@ -287,8 +313,35 @@ $locales = array(
         'default_keyboard' => 'es',
         'default_time_zone' => 'Europe/Madrid',
         'text_direction' => 'LTR',
-        'encoding' => 'UTF-8'
+        'encoding' => 'UTF-8',
+        'font' => 'latarcyrheb-sun16'
     ),
+    'et_EE' => array(
+        'translation_code' => 'et',
+        'description' => lang('language_code_et_ee'),
+        'native_description' => 'eesti keel',
+        'default_keyboard' => 'et',
+        'default_time_zone' => 'Europe/Tallinn',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+        'font' => 'latarcyrheb-sun16'
+    ),
+    'eu_ES' => array(
+        'translation_code' => 'eu',
+        'description' => lang('language_code_eu_es'),
+        'native_description' => 'Euskara',
+        'default_keyboard' => '',
+        'default_time_zone' => '',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+        'font' => 'latarcyrheb-sun16'
+    ),
+
+
+
+
+
+
 
     'fa_IR' => array(
         'translation_code' => 'fa',
@@ -316,16 +369,6 @@ $locales = array(
         'native_description' => 'Français',
         'default_keyboard' => 'fr_latin1',
         'default_time_zone' => 'Europe/Paris',
-        'text_direction' => 'LTR',
-        'encoding' => 'UTF-8',
-    ),
-
-    'gr_GR' => array(
-        'translation_code' => 'gr',
-        'description' => lang('language_code_gr_gr'),
-        'native_description' => 'Ελληνικά',
-        'default_keyboard' => 'gr',
-        'default_time_zone' => 'Europe/Athens',
         'text_direction' => 'LTR',
         'encoding' => 'UTF-8',
     ),
