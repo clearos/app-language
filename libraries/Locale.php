@@ -374,18 +374,19 @@ class Locale extends Engine
                         $lang_code = $this->grub_codes[$grub_code];
                         $this->set_language_code($lang_code);
 
-                        if (!$state_file->exists())
-                            $state_file->create('root', 'root', '0644');
 
                         clearos_log('app-language', 'set locale from grub');
                         // We're done on the first match
-                        return;
+                        break;
                     }
                 } catch (File_No_Match_Exception $e) {
                     // Not fatal
                 }
             }
         }
+
+        if (!$state_file->exists())
+            $state_file->create('root', 'root', '0644');
     }
 
     /**
