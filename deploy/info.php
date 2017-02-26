@@ -30,7 +30,17 @@ $app['menu_enabled'] = FALSE;
 $app['core_requires'] = array(
     'app-events-core >= 1:2.3.0',
     'clearos-framework >= 7.3.3',
-    'grub2'
+    'grub2',
+    'google-noto-kufi-arabic-fonts',
+    'google-noto-sans-armenian-fonts',
+    'google-noto-sans-bengali-fonts',
+    'google-noto-sans-bengali-ui-fonts',
+    'google-noto-sans-devanagari-fonts', // Hindi
+    'google-noto-sans-devanagari-ui-fonts',
+    'google-noto-sans-gujarati-fonts',
+    'google-noto-sans-gujarati-ui-fonts',
+    'google-noto-sans-simplified-chinese-fonts',
+    'google-noto-serif-fonts'
 );
 
 $app['core_file_manifest'] = array(

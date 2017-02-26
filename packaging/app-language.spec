@@ -22,6 +22,16 @@ Requires: app-base-core
 Requires: app-events-core >= 1:2.3.0
 Requires: clearos-framework >= 7.3.3
 Requires: grub2
+Requires: google-noto-kufi-arabic-fonts
+Requires: google-noto-sans-armenian-fonts
+Requires: google-noto-sans-bengali-fonts
+Requires: google-noto-sans-bengali-ui-fonts
+Requires: google-noto-sans-devanagari-fonts
+Requires: google-noto-sans-devanagari-ui-fonts
+Requires: google-noto-sans-gujarati-fonts
+Requires: google-noto-sans-gujarati-ui-fonts
+Requires: google-noto-sans-simplified-chinese-fonts
+Requires: google-noto-serif-fonts
 
 %description core
 This software is provided in many different languages.  Use this tool to set the default language for the system.
