@@ -40,16 +40,15 @@ $translation_codes = array(
 	'es' => array('description' => 'Spanish'),
 	'et' => array('description' => 'Estonian'),
 	'eu' => array('description' => 'Basque'),
-
-	'fa' => array('description' => 'Persian'),
-	'fi' => array('description' => 'Finnish'),
-	'fr' => array('description' => 'French'),
+    'fa' => array('description' => 'Persian'),
+    'fi' => array('description' => 'Finnish'),
+    'fr' => array('description' => 'French'),
 	'ga' => array('description' => 'Irish'),
 	'gl' => array('description' => 'Galician'),
 	'gu' => array('description' => 'Gujarati'),
-	'ha' => array('description' => 'Hausa'),
-	'hi' => array('description' => 'Hindi'),
-	'hr' => array('description' => 'Croatian'),
+    'ha' => array('description' => 'Hausa'),
+    'hi' => array('description' => 'Hindi'),
+    'hr' => array('description' => 'Croatian'),
 	'ht' => array('description' => 'Haitian'),
 	'hu' => array('description' => 'Hungarian'),
 	'hy' => array('description' => 'Armenian'),
@@ -57,6 +56,8 @@ $translation_codes = array(
 	'ig' => array('description' => 'Igbo'),
 	'is' => array('description' => 'Icelandic'),
 	'it' => array('description' => 'Italian'),
+
+
 	'ja' => array('description' => 'Japanese'),
 	'ka' => array('description' => 'Georgian'),
 	'km' => array('description' => 'Central Khmer'),
@@ -336,13 +337,6 @@ $locales = array(
         'encoding' => 'UTF-8',
         'font' => 'latarcyrheb-sun16'
     ),
-
-
-
-
-
-
-
     'fa_IR' => array(
         'translation_code' => 'fa',
         'description' => lang('language_code_fa_ir'),
@@ -352,7 +346,6 @@ $locales = array(
         'text_direction' => 'RTL',
         'encoding' => 'UTF-8'
     ),
-
     'fi_FI' => array(
         'translation_code' => 'fi',
         'description' => lang('language_code_fi_fi'),
@@ -360,9 +353,9 @@ $locales = array(
         'default_keyboard' => 'fi',
         'default_time_zone' => 'Europe/Helsinki',
         'text_direction' => 'LTR',
-        'encoding' => 'UTF-8'
+        'encoding' => 'UTF-8',
+        'font' => 'latarcyrheb-sun16'
     ),
-
     'fr_FR' => array(
         'translation_code' => 'fr',
         'description' => lang('language_code_fr_fr'),
@@ -371,18 +364,96 @@ $locales = array(
         'default_time_zone' => 'Europe/Paris',
         'text_direction' => 'LTR',
         'encoding' => 'UTF-8',
+        'font' => 'latarcyrheb-sun16'
     ),
-
+    'ga_IE' => array(
+        'translation_code' => 'ga',
+        'description' => lang('language_code_ga_ie'),
+        'native_description' => 'Gaeilge',
+        'default_keyboard' => '',
+        'default_time_zone' => '',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+        'font' => ''
+    ),
+    'gl_ES' => array(
+        'translation_code' => 'gl',
+        'description' => lang('language_code_gl_es'),
+        'native_description' => 'galego',
+        'default_keyboard' => '',
+        'default_time_zone' => 'Europe/Madrid',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+        'font' => 'latarcyrheb-sun16'
+    ),
+    'gu_IN' => array(
+        'translation_code' => 'gu',
+        'description' => lang('language_code_gu_in'),
+        'native_description' => 'ગુજરાતી',
+        'default_keyboard' => 'us',
+        'default_time_zone' => 'Asia/Calcutta',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+        'font' => 'latarcyrheb-sun16'
+    ),
+    'ha_NG' => array(
+        'translation_code' => 'ha',
+        'description' => lang('language_code_ha_ng'),
+        'native_description' => 'Harshen Hausa',
+        'default_keyboard' => '',
+        'default_time_zone' => '',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+        'font' => ''
+    ),
+    'hi_IN' => array(
+        'translation_code' => 'hi',
+        'description' => lang('language_code_hi_in'),
+        'native_description' => 'हिन्दी',
+        'default_keyboard' => 'us',
+        'default_time_zone' => 'Asia/Calcutta',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+        'font' => ''
+    ),
+    'hr_HR' => array(
+        'translation_code' => 'hr',
+        'description' => lang('language_code_hr_hr'),
+        'native_description' => 'Hrvatski',
+        'default_keyboard' => 'croat',
+        'default_time_zone' => 'Europe/Zagreb',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+        'font' => 'latarcyrheb-sun16'
+    ),
+    'ht_HT' => array(
+        'translation_code' => 'ht',
+        'description' => lang('language_code_ht_ht'),
+        'native_description' => 'Kreyòl ayisyen',
+        'default_keyboard' => '',
+        'default_time_zone' => '',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+        'font' => ''
+    ),
     'hu_HU' => array(
         'translation_code' => 'hu',
         'description' => lang('language_code_hu_hu'),
-        'native_description' => 'Magyar',
+        'native_description' => 'magyar',
         'default_keyboard' => 'hu',
         'default_time_zone' => 'Europe/Budapest',
         'text_direction' => 'LTR',
         'encoding' => 'UTF-8',
     ),
-
+    'hy_AM' => array(
+        'translation_code' => 'hy',
+        'description' => lang('language_code_hy_am'),
+        'native_description' => 'Հայերեն',
+        'default_keyboard' => '',
+        'default_time_zone' => '',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+    ),
     'id_ID' => array(
         'translation_code' => 'id',
         'description' => lang('language_code_id_id'),
@@ -392,7 +463,25 @@ $locales = array(
         'text_direction' => 'LTR',
         'encoding' => 'UTF-8',
     ),
-
+    'ig_NG' => array(
+        'translation_code' => 'ig_ng',
+        'description' => lang('language_code_ig_ng'),
+        'native_description' => 'igbo',
+        'default_keyboard' => '',
+        'default_time_zone' => '',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+    ),
+    'is_IS' => array(
+        'translation_code' => 'is',
+        'description' => lang('language_code_is_is'),
+        'native_description' => 'Íslenska',
+        'default_keyboard' => 'is-latin1',
+        'default_time_zone' => 'Atlantic/Reykjavik',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+        'font' => 'latarcyrheb-sun16'
+    ),
     'it_IT' => array(
         'translation_code' => 'it',
         'description' => lang('language_code_it_it'),
@@ -402,6 +491,8 @@ $locales = array(
         'text_direction' => 'LTR',
         'encoding' => 'UTF-8',
     ),
+
+
 
     'my_MM' => array(
         'translation_code' => 'my',
