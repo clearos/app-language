@@ -257,8 +257,12 @@ class Locale extends Engine
 
         $languages = array();
 
-        foreach ($locales as $code => $details)
-            $languages[$code] = $details['native_description'] . ' - ' . $code;
+        foreach ($locales as $code => $details) {
+            $languages[$code] = $details['native_description'];
+
+            if ($details['native_description'] != $details['description'])
+                $languages[$code] .= ' - ' . $details['description'];
+        }
 
         return $languages;
     }
