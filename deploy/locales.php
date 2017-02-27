@@ -56,14 +56,15 @@ $translation_codes = array(
 	'ig' => array('description' => 'Igbo'),
 	'is' => array('description' => 'Icelandic'),
 	'it' => array('description' => 'Italian'),
-
-
 	'ja' => array('description' => 'Japanese'),
 	'ka' => array('description' => 'Georgian'),
 	'km' => array('description' => 'Central Khmer'),
+
 	'kk' => array('description' => 'Kazakh'),
 	'kn' => array('description' => 'Kannada'),
 	'ko' => array('description' => 'Korean'),
+
+
 	'la' => array('description' => 'Latin'),
 	'lo' => array('description' => 'Lao'),
 	'lt' => array('description' => 'Lithuanian'),
@@ -491,7 +492,33 @@ $locales = array(
         'text_direction' => 'LTR',
         'encoding' => 'UTF-8',
     ),
-
+    'ja_JP' => array(
+        'translation_code' => 'ja',
+        'description' => lang('language_code_ja_JP'),
+        'native_description' => '日本語',
+        'default_keyboard' => 'jp106',
+        'default_time_zone' => 'Asia/Tokyo',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+    ),
+    'ka_GE' => array(
+        'translation_code' => 'ka',
+        'description' => lang('language_code_ka_ge'),
+        'native_description' => 'ქართული',
+        'default_keyboard' => '',
+        'default_time_zone' => '',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+    ),
+    'km_KH' => array(
+        'translation_code' => 'km',
+        'description' => lang('language_code_km_kh'),
+        'native_description' => 'ភាសាខ្មែរ',
+        'default_keyboard' => '',
+        'default_time_zone' => '',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+    ),
 
 
     'my_MM' => array(
