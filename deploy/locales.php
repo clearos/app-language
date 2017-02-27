@@ -74,14 +74,13 @@ $translation_codes = array(
 	'ms' => array('description' => 'Malay'),
 	'mt' => array('description' => 'Maltese'),
 	'my' => array('description' => 'Burmese'),
-
-
 	'ne' => array('description' => 'Nepali'),
 	'nl' => array('description' => 'Dutch'),
 	'no' => array('description' => 'Norwegian'),
 	'ny' => array('description' => 'Nyanja'),
 	'pa' => array('description' => 'Punjabi'),
 	'pl' => array('description' => 'Polish'),
+
 	'pt' => array('description' => 'Portuguese'),
 	'ro' => array('description' => 'Romanian'),
 	'ru' => array('description' => 'Russian'),
@@ -94,6 +93,7 @@ $translation_codes = array(
 	'sr' => array('description' => 'Serbian'),
 	'su' => array('description' => 'Sundanese'),
 	'sv' => array('description' => 'Swedish'),
+
 	'sw' => array('description' => 'Swahili'),
 	'ta' => array('description' => 'Tamil'),
 	'te' => array('description' => 'Telugu'),
@@ -652,12 +652,15 @@ $locales = array(
         'text_direction' => 'LTR',
         'encoding' => 'UTF-8',
     ),
-
-
-
-
-
-
+    'ne_NP' => array(
+        'translation_code' => 'ne',
+        'description' => lang('language_code_ne_np'),
+        'native_description' => 'नेपाली',
+        'default_keyboard' => '',
+        'default_time_zone' => '',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+    ),
     'nl_NL' => array(
         'translation_code' => 'nl',
         'description' => lang('language_code_nl_nl'),
@@ -667,7 +670,6 @@ $locales = array(
         'text_direction' => 'LTR',
         'encoding' => 'UTF-8',
     ),
-
     'no_NO' => array(
         'translation_code' => 'no',
         'description' => lang('language_code_no_no'),
@@ -677,7 +679,15 @@ $locales = array(
         'text_direction' => 'LTR',
         'encoding' => 'UTF-8',
     ),
-
+    'pa_IN' => array(
+        'translation_code' => 'pa',
+        'description' => lang('language_code_pa_in'),
+        'native_description' => 'ਪੰਜਾਬੀ',
+        'default_keyboard' => '',
+        'default_time_zone' => '',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+    ),
     'pl_PL' => array(
         'translation_code' => 'pl',
         'description' => lang('language_code_pl_pl'),
@@ -687,17 +697,6 @@ $locales = array(
         'text_direction' => 'LTR',
         'encoding' => 'UTF-8',
     ),
-
-    'pt_BR' => array(
-        'translation_code' => 'pt',
-        'description' => lang('language_code_pt_br'),
-        'native_description' => 'Português (Brasil)',
-        'default_keyboard' => 'br-abnt2',
-        'default_time_zone' => 'America/Sao_Paulo',
-        'text_direction' => 'LTR',
-        'encoding' => 'UTF-8',
-    ),
-
     'pt_PT' => array(
         'translation_code' => 'pt',
         'description' => lang('language_code_pt_pt'),
@@ -707,7 +706,33 @@ $locales = array(
         'text_direction' => 'LTR',
         'encoding' => 'UTF-8',
     ),
-
+    'ro_RO' => array(
+        'translation_code' => 'ro',
+        'description' => lang('language_code_ro_ro'),
+        'native_description' => 'Română',
+        'default_keyboard' => 'us',
+        'default_time_zone' => 'Europe/Bucharest',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+    ),
+    'ru_RU' => array(
+        'translation_code' => 'ru',
+        'description' => lang('language_code_ru_ru'),
+        'native_description' => 'Русский',
+        'default_keyboard' => 'ru',
+        'default_time_zone' => 'Europe/Moscow',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+    ),
+    'si_LK' => array(
+        'translation_code' => 'si',
+        'description' => lang('language_code_si_lk'),
+        'native_description' => 'සිංහල',
+        'default_keyboard' => '',
+        'default_time_zone' => '',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+    ),
     'sk_SK' => array(
         'translation_code' => 'sk',
         'description' => lang('language_code_sk_SK'),
@@ -717,7 +742,6 @@ $locales = array(
         'text_direction' => 'LTR',
         'encoding' => 'UTF-8',
     ),
-
     'sl_SL' => array(
         'translation_code' => 'sl',
         'description' => lang('language_code_sl_sl'),
@@ -727,7 +751,42 @@ $locales = array(
         'text_direction' => 'LTR',
         'encoding' => 'UTF-8',
     ),
-
+    'so_SO' => array(
+        'translation_code' => 'so',
+        'description' => lang('language_code_so_so'),
+        'native_description' => 'af Soomaali',
+        'default_keyboard' => '',
+        'default_time_zone' => '',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+    ),
+    'sq_AL' => array(
+        'translation_code' => 'sq',
+        'description' => lang('language_code_sq_al'),
+        'native_description' => 'Shqip',
+        'default_keyboard' => '',
+        'default_time_zone' => '',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+    ),
+    'sr_RS' => array(
+        'translation_code' => 'sr',
+        'description' => lang('language_code_sr_rs'),
+        'native_description' => 'српски',
+        'default_keyboard' => '',
+        'default_time_zone' => '',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+    ),
+    'st_ZA' => array(
+        'translation_code' => 'st',
+        'description' => lang('language_code_st_za'),
+        'native_description' => 'seSotho',
+        'default_keyboard' => '',
+        'default_time_zone' => '',
+        'text_direction' => 'LTR',
+        'encoding' => 'UTF-8',
+    ),
     'sv_SE' => array(
         'translation_code' => 'sv',
         'description' => lang('language_code_sv_se'),
@@ -737,6 +796,9 @@ $locales = array(
         'text_direction' => 'LTR',
         'encoding' => 'UTF-8',
     ),
+
+
+
 
     'tl_PH' => array(
         'translation_code' => 'tl',
@@ -754,26 +816,6 @@ $locales = array(
         'native_description' => 'Türkçe',
         'default_keyboard' => 'trq',
         'default_time_zone' => 'Europe/Istanbul',
-        'text_direction' => 'LTR',
-        'encoding' => 'UTF-8',
-    ),
-
-    'ro_RO' => array(
-        'translation_code' => 'ro',
-        'description' => lang('language_code_ro_ro'),
-        'native_description' => 'Română',
-        'default_keyboard' => 'us',
-        'default_time_zone' => 'Europe/Bucharest',
-        'text_direction' => 'LTR',
-        'encoding' => 'UTF-8',
-    ),
-
-    'ru_RU' => array(
-        'translation_code' => 'ru',
-        'description' => lang('language_code_ru_ru'),
-        'native_description' => 'Русский',
-        'default_keyboard' => 'ru',
-        'default_time_zone' => 'Europe/Moscow',
         'text_direction' => 'LTR',
         'encoding' => 'UTF-8',
     ),
