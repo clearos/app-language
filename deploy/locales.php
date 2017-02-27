@@ -21,7 +21,7 @@ clearos_load_language('base');
 //
 // The following is a mapping of Unify language codes to glibc locales.
 
-$translation_codes = array(
+$translation_codes_eraseme = array(
 	'af' => array('description' => 'Afrikaans'),
 	'ar' => array('description' => 'Arabic'),
 	'az' => array('description' => 'Azerbaijani'),
@@ -156,7 +156,7 @@ $grub_codes = array(
 $locales = array(
 	'af_ZA' => array(
         'translation_code' => 'af',
-        'description' => lang('language_code_af_za'),
+        'description' => lang('language_code_af'),
         'native_description' => 'Afrikaans',
         'default_keyboard' => '',
         'default_time_zone' => 'Africa/Johannesburg',
@@ -166,7 +166,7 @@ $locales = array(
     ),
 	'ar_SA' => array(
         'translation_code' => 'ar',
-        'description' => lang('language_code_ar_sa'),
+        'description' => lang('language_code_ar'),
         'native_description' => 'العَرَبِيَّة',
         'default_keyboard' => '',
         'default_time_zone' => 'Asia/Riyadh',
@@ -176,7 +176,7 @@ $locales = array(
     ),
 	'az_AZ' => array(
         'translation_code' => 'az',
-        'description' => lang('language_code_az_az'),
+        'description' => lang('language_code_az'),
         'native_description' => 'Azərbaycan dili',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -186,7 +186,7 @@ $locales = array(
     ),
 	'be_BY' => array(
         'translation_code' => 'be',
-        'description' => lang('language_code_be_by'),
+        'description' => lang('language_code_be'),
         'native_description' => 'беларуская мова',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -196,7 +196,7 @@ $locales = array(
     ),
 	'bg_BG' => array(
         'translation_code' => 'bg',
-        'description' => lang('language_code_bg_bg'),
+        'description' => lang('language_code_bg'),
         'native_description' => 'български',
         'default_keyboard' => 'bg',
         'default_time_zone' => 'Europe/Sofia',
@@ -206,7 +206,7 @@ $locales = array(
     ),
 	'bn_BD' => array(
         'translation_code' => 'bn',
-        'description' => lang('language_code_bn_bd'),
+        'description' => lang('language_code_bn'),
         'native_description' => 'বাংলা',
         'default_keyboard' => 'bg',
         'default_time_zone' => 'Asia/Dhaka',
@@ -216,7 +216,7 @@ $locales = array(
     ),
 	'bs_BA' => array(
         'translation_code' => 'bs',
-        'description' => lang('language_code_bs_ba'),
+        'description' => lang('language_code_bs'),
         'native_description' => 'bosanski',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -226,7 +226,7 @@ $locales = array(
     ),
     'ca_ES' => array(
         'translation_code' => 'ca',
-        'description' => lang('language_code_ca_es'),
+        'description' => lang('language_code_ca'),
         'native_description' => 'Català',
         'default_keyboard' => 'es',
         'default_time_zone' => 'Europe/Madrid',
@@ -236,7 +236,7 @@ $locales = array(
     ),
     'cs_CZ' => array(
         'translation_code' => 'cs',
-        'description' => lang('language_code_cs_cz'),
+        'description' => lang('language_code_cs'),
         'native_description' => 'čeština',
         'default_keyboard' => 'cz-lat2',
         'default_time_zone' => 'Europe/Prague',
@@ -246,7 +246,7 @@ $locales = array(
     ),
     'cy_GB' => array(
         'translation_code' => 'cy',
-        'description' => lang('language_code_cy_gb'),
+        'description' => lang('language_code_cy'),
         'native_description' => 'Cymraeg',
         'default_keyboard' => 'uk',
         'default_time_zone' => 'Europe/London',
@@ -256,7 +256,7 @@ $locales = array(
     ),
     'da_DK' => array(
         'translation_code' => 'da',
-        'description' => lang('language_code_da_dk'),
+        'description' => lang('language_code_da'),
         'native_description' => 'Dansk',
         'default_keyboard' => 'dk',
         'default_time_zone' => 'Europe/Copenhagen',
@@ -266,7 +266,7 @@ $locales = array(
     ),
     'de_DE' => array(
         'translation_code' => 'de',
-        'description' => lang('language_code_de_de'),
+        'description' => lang('language_code_de'),
         'native_description' => 'Deutsch',
         'default_keyboard' => 'de-latin1-nodeadkeys',
         'default_time_zone' => 'Europe/Berlin',
@@ -276,7 +276,7 @@ $locales = array(
     ),
     'el_GR' => array(
         'translation_code' => 'el',
-        'description' => lang('language_code_el_gr'),
+        'description' => lang('language_code_el'),
         'native_description' => 'Ελληνικά',
         'default_keyboard' => 'gr',
         'default_time_zone' => 'Europe/Athens',
@@ -286,7 +286,7 @@ $locales = array(
     ),
     'en_US' => array(
         'translation_code' => 'en',
-        'description' => lang('language_code_en_us'),
+        'description' => lang('language_code_en'),
         'native_description' => 'English (US)',
         'default_keyboard' => 'us',
         'default_time_zone' => 'America/New_York',
@@ -306,7 +306,7 @@ $locales = array(
     ),
     'es_ES' => array(
         'translation_code' => 'es',
-        'description' => lang('language_code_es_es'),
+        'description' => lang('language_code_es'),
         'native_description' => 'Español',
         'default_keyboard' => 'es',
         'default_time_zone' => 'Europe/Madrid',
@@ -316,7 +316,7 @@ $locales = array(
     ),
     'et_EE' => array(
         'translation_code' => 'et',
-        'description' => lang('language_code_et_ee'),
+        'description' => lang('language_code_et'),
         'native_description' => 'eesti keel',
         'default_keyboard' => 'et',
         'default_time_zone' => 'Europe/Tallinn',
@@ -326,7 +326,7 @@ $locales = array(
     ),
     'eu_ES' => array(
         'translation_code' => 'eu',
-        'description' => lang('language_code_eu_es'),
+        'description' => lang('language_code_eu'),
         'native_description' => 'Euskara',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -336,7 +336,7 @@ $locales = array(
     ),
     'fa_IR' => array(
         'translation_code' => 'fa',
-        'description' => lang('language_code_fa_ir'),
+        'description' => lang('language_code_fa'),
         'native_description' => 'پارسی',
         'default_keyboard' => 'us',
         'default_time_zone' => 'Asia/Tehran',
@@ -345,7 +345,7 @@ $locales = array(
     ),
     'fi_FI' => array(
         'translation_code' => 'fi',
-        'description' => lang('language_code_fi_fi'),
+        'description' => lang('language_code_fi'),
         'native_description' => 'Suomi',
         'default_keyboard' => 'fi',
         'default_time_zone' => 'Europe/Helsinki',
@@ -355,7 +355,7 @@ $locales = array(
     ),
     'fr_FR' => array(
         'translation_code' => 'fr',
-        'description' => lang('language_code_fr_fr'),
+        'description' => lang('language_code_fr'),
         'native_description' => 'Français',
         'default_keyboard' => 'fr_latin1',
         'default_time_zone' => 'Europe/Paris',
@@ -365,7 +365,7 @@ $locales = array(
     ),
     'ga_IE' => array(
         'translation_code' => 'ga',
-        'description' => lang('language_code_ga_ie'),
+        'description' => lang('language_code_ga'),
         'native_description' => 'Gaeilge',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -375,7 +375,7 @@ $locales = array(
     ),
     'gl_ES' => array(
         'translation_code' => 'gl',
-        'description' => lang('language_code_gl_es'),
+        'description' => lang('language_code_gl'),
         'native_description' => 'galego',
         'default_keyboard' => '',
         'default_time_zone' => 'Europe/Madrid',
@@ -385,7 +385,7 @@ $locales = array(
     ),
     'gu_IN' => array(
         'translation_code' => 'gu',
-        'description' => lang('language_code_gu_in'),
+        'description' => lang('language_code_gu'),
         'native_description' => 'ગુજરાતી',
         'default_keyboard' => 'us',
         'default_time_zone' => 'Asia/Calcutta',
@@ -395,7 +395,7 @@ $locales = array(
     ),
     'ha_NG' => array(
         'translation_code' => 'ha',
-        'description' => lang('language_code_ha_ng'),
+        'description' => lang('language_code_ha'),
         'native_description' => 'Harshen Hausa',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -405,7 +405,7 @@ $locales = array(
     ),
     'hi_IN' => array(
         'translation_code' => 'hi',
-        'description' => lang('language_code_hi_in'),
+        'description' => lang('language_code_hi'),
         'native_description' => 'हिन्दी',
         'default_keyboard' => 'us',
         'default_time_zone' => 'Asia/Calcutta',
@@ -415,7 +415,7 @@ $locales = array(
     ),
     'hr_HR' => array(
         'translation_code' => 'hr',
-        'description' => lang('language_code_hr_hr'),
+        'description' => lang('language_code_hr'),
         'native_description' => 'Hrvatski',
         'default_keyboard' => 'croat',
         'default_time_zone' => 'Europe/Zagreb',
@@ -425,7 +425,7 @@ $locales = array(
     ),
     'ht_HT' => array(
         'translation_code' => 'ht',
-        'description' => lang('language_code_ht_ht'),
+        'description' => lang('language_code_ht'),
         'native_description' => 'Kreyòl ayisyen',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -435,7 +435,7 @@ $locales = array(
     ),
     'hu_HU' => array(
         'translation_code' => 'hu',
-        'description' => lang('language_code_hu_hu'),
+        'description' => lang('language_code_hu'),
         'native_description' => 'magyar',
         'default_keyboard' => 'hu',
         'default_time_zone' => 'Europe/Budapest',
@@ -444,7 +444,7 @@ $locales = array(
     ),
     'hy_AM' => array(
         'translation_code' => 'hy',
-        'description' => lang('language_code_hy_am'),
+        'description' => lang('language_code_hy'),
         'native_description' => 'Հայերեն',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -453,7 +453,7 @@ $locales = array(
     ),
     'id_ID' => array(
         'translation_code' => 'id',
-        'description' => lang('language_code_id_id'),
+        'description' => lang('language_code_id'),
         'native_description' => 'Bahasa Indonesia',
         'default_keyboard' => 'us',
         'default_time_zone' => 'Asia/Jakarta',
@@ -461,8 +461,8 @@ $locales = array(
         'encoding' => 'UTF-8',
     ),
     'ig_NG' => array(
-        'translation_code' => 'ig_ng',
-        'description' => lang('language_code_ig_ng'),
+        'translation_code' => 'ig',
+        'description' => lang('language_code_ig'),
         'native_description' => 'igbo',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -471,7 +471,7 @@ $locales = array(
     ),
     'is_IS' => array(
         'translation_code' => 'is',
-        'description' => lang('language_code_is_is'),
+        'description' => lang('language_code_is'),
         'native_description' => 'Íslenska',
         'default_keyboard' => 'is-latin1',
         'default_time_zone' => 'Atlantic/Reykjavik',
@@ -481,7 +481,7 @@ $locales = array(
     ),
     'it_IT' => array(
         'translation_code' => 'it',
-        'description' => lang('language_code_it_it'),
+        'description' => lang('language_code_it'),
         'native_description' => 'Italiano',
         'default_keyboard' => 'it',
         'default_time_zone' => 'Europe/Rome',
@@ -490,7 +490,7 @@ $locales = array(
     ),
     'ja_JP' => array(
         'translation_code' => 'ja',
-        'description' => lang('language_code_ja_JP'),
+        'description' => lang('language_code_ja'),
         'native_description' => '日本語',
         'default_keyboard' => 'jp106',
         'default_time_zone' => 'Asia/Tokyo',
@@ -499,7 +499,7 @@ $locales = array(
     ),
     'ka_GE' => array(
         'translation_code' => 'ka',
-        'description' => lang('language_code_ka_ge'),
+        'description' => lang('language_code_ka'),
         'native_description' => 'ქართული',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -508,7 +508,7 @@ $locales = array(
     ),
     'km_KH' => array(
         'translation_code' => 'km',
-        'description' => lang('language_code_km_kh'),
+        'description' => lang('language_code_km'),
         'native_description' => 'ភាសាខ្មែរ',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -517,7 +517,7 @@ $locales = array(
     ),
     'kk_KZ' => array(
         'translation_code' => 'kk',
-        'description' => lang('language_code_kk_kz'),
+        'description' => lang('language_code_kk'),
         'native_description' => 'Қазақ тілі',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -526,7 +526,7 @@ $locales = array(
     ),
     'kn_IN' => array(
         'translation_code' => 'kn',
-        'description' => lang('language_code_kn_in'),
+        'description' => lang('language_code_kn'),
         'native_description' => 'ಕನ್ನಡ',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -535,7 +535,7 @@ $locales = array(
     ),
     'ko_KR' => array(
         'translation_code' => 'ko',
-        'description' => lang('language_code_ko_kr'),
+        'description' => lang('language_code_ko'),
         'native_description' => '한국어',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -544,7 +544,7 @@ $locales = array(
     ),
     'lo_LA' => array(
         'translation_code' => 'lo',
-        'description' => lang('language_code_lo_la'),
+        'description' => lang('language_code_lo'),
         'native_description' => 'ພາສາລາວ',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -553,7 +553,7 @@ $locales = array(
     ),
     'lt_LT' => array(
         'translation_code' => 'lt',
-        'description' => lang('language_code_lt_lt'),
+        'description' => lang('language_code_lt'),
         'native_description' => 'lietuvių kalba',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -562,7 +562,7 @@ $locales = array(
     ),
     'lv_LV' => array(
         'translation_code' => 'lv',
-        'description' => lang('language_code_lv_lv'),
+        'description' => lang('language_code_lv'),
         'native_description' => 'latviešu valoda',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -571,7 +571,7 @@ $locales = array(
     ),
     'mg_MG' => array(
         'translation_code' => 'mg',
-        'description' => lang('language_code_mg_mg'),
+        'description' => lang('language_code_mg'),
         'native_description' => 'Fiteny Malagasy',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -580,7 +580,7 @@ $locales = array(
     ),
     'mi_NZ' => array(
         'translation_code' => 'mi',
-        'description' => lang('language_code_mi_nz'),
+        'description' => lang('language_code_mi'),
         'native_description' => 'Te Reo Māori',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -589,7 +589,7 @@ $locales = array(
     ),
     'mk_MK' => array(
         'translation_code' => 'mk',
-        'description' => lang('language_code_mk_mk'),
+        'description' => lang('language_code_mk'),
         'native_description' => 'македонски',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -598,7 +598,7 @@ $locales = array(
     ),
     'ml_IN' => array(
         'translation_code' => 'ml',
-        'description' => lang('language_code_ml_in'),
+        'description' => lang('language_code_ml'),
         'native_description' => 'മലയാളം',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -607,7 +607,7 @@ $locales = array(
     ),
     'mn_MN' => array(
         'translation_code' => 'mn',
-        'description' => lang('language_code_mn_mn'),
+        'description' => lang('language_code_mn'),
         'native_description' => 'Монгол',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -616,7 +616,7 @@ $locales = array(
     ),
     'mr_in' => array(
         'translation_code' => 'mr',
-        'description' => lang('language_code_mr_in'),
+        'description' => lang('language_code_mr'),
         'native_description' => 'मराठी',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -625,7 +625,7 @@ $locales = array(
     ),
     'ms_MY' => array(
         'translation_code' => 'ms',
-        'description' => lang('language_code_ms_my'),
+        'description' => lang('language_code_ms'),
         'native_description' => 'Bahasa melayu',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -634,7 +634,7 @@ $locales = array(
     ),
     'mt_MT' => array(
         'translation_code' => 'mt',
-        'description' => lang('language_code_mt_mt'),
+        'description' => lang('language_code_mt'),
         'native_description' => 'Malti',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -643,7 +643,7 @@ $locales = array(
     ),
     'my_MM' => array(
         'translation_code' => 'my',
-        'description' => lang('language_code_my_mm'),
+        'description' => lang('language_code_my'),
         'native_description' => 'မြန်မာစာ',
         'default_keyboard' => 'us',
         'default_time_zone' => 'Asia/Rangoon',
@@ -652,7 +652,7 @@ $locales = array(
     ),
     'ne_NP' => array(
         'translation_code' => 'ne',
-        'description' => lang('language_code_ne_np'),
+        'description' => lang('language_code_ne'),
         'native_description' => 'नेपाली',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -661,7 +661,7 @@ $locales = array(
     ),
     'nl_NL' => array(
         'translation_code' => 'nl',
-        'description' => lang('language_code_nl_nl'),
+        'description' => lang('language_code_nl'),
         'native_description' => 'Nederlands',
         'default_keyboard' => 'nl',
         'default_time_zone' => 'Europe/Amsterdam',
@@ -670,7 +670,7 @@ $locales = array(
     ),
     'no_NO' => array(
         'translation_code' => 'no',
-        'description' => lang('language_code_no_no'),
+        'description' => lang('language_code_no'),
         'native_description' => 'Norsk',
         'default_keyboard' => 'no',
         'default_time_zone' => 'Europe/Oslo',
@@ -679,7 +679,7 @@ $locales = array(
     ),
     'pa_IN' => array(
         'translation_code' => 'pa',
-        'description' => lang('language_code_pa_in'),
+        'description' => lang('language_code_pa'),
         'native_description' => 'ਪੰਜਾਬੀ',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -688,7 +688,7 @@ $locales = array(
     ),
     'pl_PL' => array(
         'translation_code' => 'pl',
-        'description' => lang('language_code_pl_pl'),
+        'description' => lang('language_code_pl'),
         'native_description' => 'Polski',
         'default_keyboard' => 'pl2',
         'default_time_zone' => 'Europe/Warsaw',
@@ -697,7 +697,7 @@ $locales = array(
     ),
     'pt_PT' => array(
         'translation_code' => 'pt',
-        'description' => lang('language_code_pt_pt'),
+        'description' => lang('language_code_pt'),
         'native_description' => 'Português',
         'default_keyboard' => 'pt-latin1',
         'default_time_zone' => 'Europe/Lisbon',
@@ -706,7 +706,7 @@ $locales = array(
     ),
     'ro_RO' => array(
         'translation_code' => 'ro',
-        'description' => lang('language_code_ro_ro'),
+        'description' => lang('language_code_ro'),
         'native_description' => 'Română',
         'default_keyboard' => 'us',
         'default_time_zone' => 'Europe/Bucharest',
@@ -715,7 +715,7 @@ $locales = array(
     ),
     'ru_RU' => array(
         'translation_code' => 'ru',
-        'description' => lang('language_code_ru_ru'),
+        'description' => lang('language_code_ru'),
         'native_description' => 'Русский',
         'default_keyboard' => 'ru',
         'default_time_zone' => 'Europe/Moscow',
@@ -724,7 +724,7 @@ $locales = array(
     ),
     'si_LK' => array(
         'translation_code' => 'si',
-        'description' => lang('language_code_si_lk'),
+        'description' => lang('language_code_si'),
         'native_description' => 'සිංහල',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -733,7 +733,7 @@ $locales = array(
     ),
     'sk_SK' => array(
         'translation_code' => 'sk',
-        'description' => lang('language_code_sk_SK'),
+        'description' => lang('language_code_sk'),
         'native_description' => 'Slovenčina',
         'default_keyboard' => 'sk-qwerty',
         'default_time_zone' => 'Europe/Bratislava',
@@ -742,7 +742,7 @@ $locales = array(
     ),
     'sl_SL' => array(
         'translation_code' => 'sl',
-        'description' => lang('language_code_sl_sl'),
+        'description' => lang('language_code_sl'),
         'native_description' => 'Slovaščina',
         'default_keyboard' => 'slovene',
         'default_time_zone' => 'Europe/Ljubljana',
@@ -751,7 +751,7 @@ $locales = array(
     ),
     'so_SO' => array(
         'translation_code' => 'so',
-        'description' => lang('language_code_so_so'),
+        'description' => lang('language_code_so'),
         'native_description' => 'af Soomaali',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -760,7 +760,7 @@ $locales = array(
     ),
     'sq_AL' => array(
         'translation_code' => 'sq',
-        'description' => lang('language_code_sq_al'),
+        'description' => lang('language_code_sq'),
         'native_description' => 'Shqip',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -769,7 +769,7 @@ $locales = array(
     ),
     'sr_RS' => array(
         'translation_code' => 'sr',
-        'description' => lang('language_code_sr_rs'),
+        'description' => lang('language_code_sr'),
         'native_description' => 'српски',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -778,7 +778,7 @@ $locales = array(
     ),
     'st_ZA' => array(
         'translation_code' => 'st',
-        'description' => lang('language_code_st_za'),
+        'description' => lang('language_code_st'),
         'native_description' => 'seSotho',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -787,7 +787,7 @@ $locales = array(
     ),
     'sv_SE' => array(
         'translation_code' => 'sv',
-        'description' => lang('language_code_sv_se'),
+        'description' => lang('language_code_sv'),
         'native_description' => 'Svenska',
         'default_keyboard' => 'sv-latin1',
         'default_time_zone' => 'Europe/Stockholm',
@@ -796,7 +796,7 @@ $locales = array(
     ),
     'sw_TZ' => array(
         'translation_code' => 'sw',
-        'description' => lang('language_code_sw_tz'),
+        'description' => lang('language_code_sw'),
         'native_description' => 'Kiswahili',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -805,7 +805,7 @@ $locales = array(
     ),
     'ta_LK' => array(
         'translation_code' => 'ta',
-        'description' => lang('language_code_ta_lk'),
+        'description' => lang('language_code_ta'),
         'native_description' => 'தமிழ்',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -814,7 +814,7 @@ $locales = array(
     ),
     'te_IN' => array(
         'translation_code' => 'te',
-        'description' => lang('language_code_te_in'),
+        'description' => lang('language_code_te'),
         'native_description' => 'తెలుగు',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -823,7 +823,7 @@ $locales = array(
     ),
     'tg_TJ' => array(
         'translation_code' => 'tg',
-        'description' => lang('language_code_tg_tj'),
+        'description' => lang('language_code_tg'),
         'native_description' => 'тоҷики',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -832,7 +832,7 @@ $locales = array(
     ),
     'th_TH' => array(
         'translation_code' => 'th',
-        'description' => lang('language_code_th_th'),
+        'description' => lang('language_code_th'),
         'native_description' => 'ภาษาไทย',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -841,7 +841,7 @@ $locales = array(
     ),
     'tl_PH' => array(
         'translation_code' => 'tl',
-        'description' => lang('language_code_tl_ph'),
+        'description' => lang('language_code_tl'),
         'native_description' => 'Tagalog',
         'default_keyboard' => 'us',
         'default_time_zone' => 'Asia/Manila',
@@ -850,7 +850,7 @@ $locales = array(
     ),
     'tr_TR' => array(
         'translation_code' => 'tr',
-        'description' => lang('language_code_tr_tr'),
+        'description' => lang('language_code_tr'),
         'native_description' => 'Türkçe',
         'default_keyboard' => 'trq',
         'default_time_zone' => 'Europe/Istanbul',
@@ -859,7 +859,7 @@ $locales = array(
     ),
     'uk_UA' => array(
         'translation_code' => 'uk',
-        'description' => lang('language_code_uk_ua'),
+        'description' => lang('language_code_uk'),
         'native_description' => 'Українська',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -868,7 +868,7 @@ $locales = array(
     ),
     'ur_PK' => array(
         'translation_code' => 'ur',
-        'description' => lang('language_code_ur_pk'),
+        'description' => lang('language_code_ur'),
         'native_description' => 'اردو',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -877,7 +877,7 @@ $locales = array(
     ),
     'uz_UZ' => array(
         'translation_code' => 'uz',
-        'description' => lang('language_code_uz_uz'),
+        'description' => lang('language_code_uz'),
         'native_description' => 'oʻzbek tili',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -886,7 +886,7 @@ $locales = array(
     ),
     'vi_VN' => array(
         'translation_code' => 'vi',
-        'description' => lang('language_code_vi_vn'),
+        'description' => lang('language_code_vi'),
         'native_description' => 'tiếng việt',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -895,7 +895,7 @@ $locales = array(
     ),
     'yi_US' => array(
         'translation_code' => 'yi',
-        'description' => lang('language_code_yi_us'),
+        'description' => lang('language_code_yi'),
         'native_description' => 'ײִדיש',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -904,7 +904,7 @@ $locales = array(
     ),
     'yo_NG' => array(
         'translation_code' => 'yo',
-        'description' => lang('language_code_yo_ng'),
+        'description' => lang('language_code_yo'),
         'native_description' => 'Yorùbá',
         'default_keyboard' => '',
         'default_time_zone' => '',
@@ -913,7 +913,7 @@ $locales = array(
     ),
     'zh_CN' => array(
         'translation_code' => 'zh',
-        'description' => lang('language_code_zh_cn'),
+        'description' => lang('language_code_zh'),
         'native_description' => '中文',
         'default_keyboard' => 'us',
         'default_time_zone' => 'Asia/Shanghai',
@@ -922,7 +922,7 @@ $locales = array(
     ),
     'zu_ZA' => array(
         'translation_code' => 'zu',
-        'description' => lang('language_code_zu_za'),
+        'description' => lang('language_code_zu'),
         'native_description' => 'isiZulu',
         'default_keyboard' => '',
         'default_time_zone' => '',
