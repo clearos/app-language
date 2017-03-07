@@ -114,7 +114,6 @@ class Locale extends Engine
 
     protected $locales = array();
     protected $grub_codes = array();
-    protected $translation_codes = array();
 
     ///////////////////////////////////////////////////////////////////////////////
     // M E T H O D S
@@ -132,7 +131,6 @@ class Locale extends Engine
 
         $this->locales = $locales;
         $this->grub_codes = $grub_codes;
-        $this->translation_codes = $translation_codes;
     }
 
     /**
@@ -211,11 +209,18 @@ class Locale extends Engine
      *
      * The language code format is: en_US, fr_FR, etc.
      *
+     * If fuzzy is set to TRUE, then the method will return the best
+     * match from the list of available translations, e.g. en_CA is
+     * a valid language code but it's not translated, so return en_US
+     * when fuzzy is TRUE.
+     *
+     * @param boolean $fuzzy fuzzy match flag
+     *
      * @return string language code 
      * @throws Engine_Exception
      */
 
-    public function get_language_code()
+    public function get_language_code($fuzzy = FALSE)
     {
         clearos_profile(__METHOD__, __LINE__);
 
@@ -226,6 +231,22 @@ class Locale extends Engine
                 $code = $file->lookup_value('/^LANG=/');
                 $code = preg_replace('/\..*/', '', $code);
                 $code = preg_replace('/\"/', '', $code);
+
+                // Fuzzy matching - very basic
+                if ($fuzzy && !array_key_exists($code, $this->locales)) {
+                    $base_code = preg_replace('/_.*/', '', $code);
+                    $fuzzy_code = '';
+
+                    foreach ($this->locales as $key => $values) {
+                        if ($values['translation_code'] == $base_code)
+                            $fuzzy_code = $key;
+                    }
+
+                    if (empty($fuzzy_code))
+                        $code = self::DEFAULT_LANGUAGE_CODE;
+                    else
+                        $code = $fuzzy_code;
+                }
             } else {
                 $code = self::DEFAULT_LANGUAGE_CODE;
             }
