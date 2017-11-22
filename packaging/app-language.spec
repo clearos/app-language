@@ -19,7 +19,6 @@ Summary: Language - Core
 License: LGPLv3
 Group: ClearOS/Libraries
 Requires: app-base-core
-Requires: app-events-core >= 1:2.3.0
 Requires: clearos-framework >= 7.3.6
 Requires: grub2
 Requires: google-noto-kufi-arabic-fonts

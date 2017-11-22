@@ -28,7 +28,6 @@ $app['menu_enabled'] = FALSE;
 /////////////////////////////////////////////////////////////////////////////
 
 $app['core_requires'] = array(
-    'app-events-core >= 1:2.3.0',
     'clearos-framework >= 7.3.6',
     'grub2',
     'google-noto-kufi-arabic-fonts',
