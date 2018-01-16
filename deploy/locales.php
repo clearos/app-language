@@ -22,39 +22,39 @@ clearos_load_language('base');
 // The following is a mapping of grub language codes to glibc locales.
 
 $grub_codes = array(
-	'ca' => 'ca_ES',
-	'da' => 'da_DK',
-	'de' => 'de_DE',
-	'de@hebrew' => 'de_DE',
-	'de_CH' => 'de_CH',
-	'en' => 'en_US',
-	'en@arabic' => 'en_US',
-	'en@cyrillic' => 'en_US',
-	'en@greek' => 'en_US',
-	'en@hebrew' => 'en_US',
-	'en@piglatin' => 'en_US',
-	'en@quot' => 'en_US',
-	'es' => 'es_ES',
-	'fi' => 'fi_FI',
-	'fr' => 'fr_FR',
-	'gl' => 'gl_ES',
-	'hu' => 'hu_HU',
-	'id' => 'id_ID',
-	'it' => 'it_IT',
-	'ja' => 'ja_JP',
-	'lt' => 'lt_LT',
-	'nl' => 'nl_NL',
-	'pa' => 'pa_PK',
-	'pl' => 'pl_PL',
-	'pt_BR' => 'pt_BR',
-	'ru' => 'ru_RU',
-	'sl' => 'sl_SI',
-	'sv' => 'sv_SE',
-	'tr' => 'tr_TR',
-	'uk' => 'uk_UA',
-	'vi' => 'vi_VN',
-	'zh_CN' => 'zh_CN',
-	'zh_TW' => 'zh_TW',
+    'ca' => 'ca_ES',
+    'da' => 'da_DK',
+    'de' => 'de_DE',
+    'de@hebrew' => 'de_DE',
+    'de_CH' => 'de_CH',
+    'en' => 'en_US',
+    'en@arabic' => 'en_US',
+    'en@cyrillic' => 'en_US',
+    'en@greek' => 'en_US',
+    'en@hebrew' => 'en_US',
+    'en@piglatin' => 'en_US',
+    'en@quot' => 'en_US',
+    'es' => 'es_ES',
+    'fi' => 'fi_FI',
+    'fr' => 'fr_FR',
+    'gl' => 'gl_ES',
+    'hu' => 'hu_HU',
+    'id' => 'id_ID',
+    'it' => 'it_IT',
+    'ja' => 'ja_JP',
+    'lt' => 'lt_LT',
+    'nl' => 'nl_NL',
+    'pa' => 'pa_PK',
+    'pl' => 'pl_PL',
+    'pt_BR' => 'pt_BR',
+    'ru' => 'ru_RU',
+    'sl' => 'sl_SI',
+    'sv' => 'sv_SE',
+    'tr' => 'tr_TR',
+    'uk' => 'uk_UA',
+    'vi' => 'vi_VN',
+    'zh_CN' => 'zh_CN',
+    'zh_TW' => 'zh_TW',
 );
 
 // Locales
@@ -62,7 +62,7 @@ $grub_codes = array(
 // /etc/locale.conf locales supported by ClearOS
 
 $locales = array(
-	'af_ZA' => array(
+    'af_ZA' => array(
         'translation_code' => 'af',
         'description' => lang('language_code_af'),
         'native_description' => 'Afrikaans',
@@ -72,7 +72,7 @@ $locales = array(
         'encoding' => 'UTF-8',
         'font' => 'latarcyrheb-sun16'
     ),
-	'ar_SA' => array(
+    'ar_SA' => array(
         'translation_code' => 'ar',
         'description' => lang('language_code_ar'),
         'native_description' => 'العَرَبِيَّة',
@@ -82,7 +82,7 @@ $locales = array(
         'encoding' => 'UTF-8',
         'font' => 'latarcyrheb-sun16'
     ),
-	'az_AZ' => array(
+    'az_AZ' => array(
         'translation_code' => 'az',
         'description' => lang('language_code_az'),
         'native_description' => 'Azərbaycan dili',
@@ -92,7 +92,7 @@ $locales = array(
         'encoding' => 'UTF-8',
         'font' => ''
     ),
-	'be_BY' => array(
+    'be_BY' => array(
         'translation_code' => 'be',
         'description' => lang('language_code_be'),
         'native_description' => 'беларуская мова',
@@ -102,7 +102,7 @@ $locales = array(
         'encoding' => 'UTF-8',
         'font' => ''
     ),
-	'bg_BG' => array(
+    'bg_BG' => array(
         'translation_code' => 'bg',
         'description' => lang('language_code_bg'),
         'native_description' => 'български',
@@ -112,7 +112,7 @@ $locales = array(
         'encoding' => 'UTF-8',
         'font' => 'latarcyrheb-sun16'
     ),
-	'bn_BD' => array(
+    'bn_BD' => array(
         'translation_code' => 'bn',
         'description' => lang('language_code_bn'),
         'native_description' => 'বাংলা',
@@ -122,7 +122,7 @@ $locales = array(
         'encoding' => 'UTF-8',
         'font' => ''
     ),
-	'bs_BA' => array(
+    'bs_BA' => array(
         'translation_code' => 'bs',
         'description' => lang('language_code_bs'),
         'native_description' => 'bosanski',
